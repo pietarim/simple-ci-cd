@@ -14,6 +14,7 @@ const App = () => {
   const [type, setType] = useState(null)
 
   useEffect(() => {
+    console.log('hei')
     const addContact = async () => {
       const contacts = await contactsService.getAll()
       setContact(contacts)
