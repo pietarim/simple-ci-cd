@@ -1,0 +1,4 @@
+*.http
+/node_modules
+fly.toml
+/queries
