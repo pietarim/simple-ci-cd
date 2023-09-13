@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - master
-    pull_request:
-      branches: '*'
-      types: [opened, synchronize]
+  pull_request:
+    branches: '*'
+    types: [opened, synchronize]
 
 jobs:
   pre_deploy-process:
