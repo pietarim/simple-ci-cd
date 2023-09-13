@@ -9,7 +9,7 @@ on:
       types: [opened, synchronize]
 
 jobs:
-  pre_deploy:
+  pre_deploy-process:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
