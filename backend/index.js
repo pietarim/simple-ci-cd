@@ -55,8 +55,6 @@ app.get('/info', (req, res, next) => {
 
 app.get('/api/persons/:id', (req, res, next) => {
   const id = req.params.id
-  console.log('hei')
-  const muuttuja = 'hei'
   Person.findById(id)
     .then((person) => {
       res.json(person)
