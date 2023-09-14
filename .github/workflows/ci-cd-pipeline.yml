@@ -39,7 +39,7 @@ jobs:
     steps:
       - name: Deploy
         # Only run this step if the branch is master
-        if: ${{ !needs.a_test_job.outputs.SKIP =='true' }}
+        if: ${{ !needs.skip_check.outputs.SKIP =='true' }}
         env:
           deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
         run: |
