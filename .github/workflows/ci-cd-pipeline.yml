@@ -35,13 +35,13 @@ jobs:
           SKIP: ${{ contains(toJson(github.event.pull_request.body), '#SKIP') }}
         run: |
           echo "SKIP: $SKIP"
-          echo "Conditional: ${{ !needs.skip_check.outputs.SKIP =='true' }}"
+          echo "Conditional: ${{ needs.skip_check.outputs.SKIP =!'true' }}"
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy
         # Only run this step if the branch is master
-        if: ${{ !needs.skip_check.outputs.SKIP =='true' }}
+        if: ${{ needs.skip_check.outputs.SKIP =!'true' }}
         env:
           deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
         run: |
