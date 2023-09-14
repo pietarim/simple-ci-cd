@@ -1,0 +1,16 @@
+on:
+  schedule:
+    - cron: '0/5 * * * *'
+
+jobs:
+  test_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: First step
+        run: echo "Halojaa"
+      - name: health check
+        uses: jtalk/url-health-check-action@v3
+        with:
+          url: https://own-build-ci-cd.onrender.com
+          max-attempts: 3
+          retry-delay: 10s
