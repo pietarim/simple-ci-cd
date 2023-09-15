@@ -3,7 +3,7 @@ on:
     branches:
       - '*'
   schedule:
-    - cron: '0/1 * * * *'
+    - cron: '*/2 * * * *'
 
 jobs:
   test_schedule:
@@ -11,9 +11,3 @@ jobs:
     steps:
       - name: First step
         run: echo "Halojaa"
-      - name: health check
-        uses: jtalk/url-health-check-action@v3
-        with:
-          url: https://own-build-ci-cd.onrender.com
-          max-attempts: 3
-          retry-delay: 10s

@@ -112,6 +112,10 @@ app.post('/api/persons', (req, res, next) => {
   })
 })
 
+app.get('*', (req, res) => {
+  res.sendFile('index.js', { root: './backend/build' })
+})
+
 app.use(errorHandler)
 
 const PORT = process.env.PORT || 3001
