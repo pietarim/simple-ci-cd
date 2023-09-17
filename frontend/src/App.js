@@ -14,13 +14,13 @@ const App = () => {
   const [type, setType] = useState(null)
 
   useEffect(() => {
+    console.log('hei')
     const addContact = async () => {
       const contacts = await contactsService.getAll()
       setContact(contacts)
     }
     addContact()
   }, [])
-    
 
   const handleFilterChange = (event) => {
     event.preventDefault()
@@ -38,29 +38,28 @@ const App = () => {
 
   return (
     <div>
-      <h2>Phonebook</h2>
+      <h2>Phonebook testaaminen</h2>
       <Notification message={message} type={type} />
       <Filter filter={filter} handleFilterChange={handleFilterChange} />
       <h2>add a new</h2>
-      <PersonForm 
+      <PersonForm
         handleNotification={handleNotification}
-        contact={contact} 
-        setContact={setContact} 
-        newName={newName} 
-        setNewName={setNewName} 
-        newNumber={newNumber} 
-        setNewNumber={setNewNumber} 
+        contact={contact}
+        setContact={setContact}
+        newName={newName}
+        setNewName={setNewName}
+        newNumber={newNumber}
+        setNewNumber={setNewNumber}
       />
       <h2>Numbers</h2>
-      <Persons 
-        contacts={contact} 
-        filterString={filter} 
+      <Persons
+        contacts={contact}
+        filterString={filter}
         setContact={setContact}
-        handleNotification={handleNotification} 
+        handleNotification={handleNotification}
       />
     </div>
   )
-
 }
 
 export default App
