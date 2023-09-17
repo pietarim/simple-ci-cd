@@ -33,8 +33,6 @@ app.use(
 )
 
 app.get('/api/health', (req, res) => {
-  throw 'error'
-  // eslint-disable-next-line no-unreachable
   res.status(200).send('healthy')
 })
 
