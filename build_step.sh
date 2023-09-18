@@ -1,2 +1,2 @@
 npm run install-all
-npm run build-client
+npm run build-client-production
