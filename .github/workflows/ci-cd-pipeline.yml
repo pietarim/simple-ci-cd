@@ -41,7 +41,7 @@ jobs:
     steps:
       - name: Deploy
         # Only run this step if the branch is master
-        if: ${{ needs.skip_check.outputs.SKIP !='true' && github.ref == 'refs/heads/master' && github.event_name == 'push' }}
+        if: ${{ needs.skip_check.outputs.SKIP !='true' }}
         env:
           deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
         run: |
