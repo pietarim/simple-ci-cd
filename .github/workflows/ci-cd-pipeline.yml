@@ -21,7 +21,7 @@ jobs:
       - name: Check style
         run: npm run lint-all
       - name: Build
-        run: npm run build-client
+        run: npm run build-client-production
   skip_check:
     runs-on: ubuntu-20.04
     steps:
